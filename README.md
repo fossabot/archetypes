@@ -2,7 +2,7 @@
 
 # `archetypes`
 
-[![License][license-image]][license-url] [![FOSSA Status][badge-fossa-image]][fossa-url] [![NPM version][npm-image]][npm-url] <br>[![NSP Status][badge-nsp-image]][nsp-url] [![Dependency Status][badge-coveralls-image]][daviddm-url] [![devDependencies Status][badge-coveralls-image]][daviddm-dev-url] <br>[![Build Status][badge-travis-image]][travis-url] [![Coverage percentage][badge-coveralls-image]][coveralls-url] [![Codacy quality][badge-codacy-image]][codacy-url]
+[![License][license-image]][license-url] [![FOSSA Status][badge-fossa-image]][fossa-url] [![NPM version][npm-image]][npm-url]<br>[![NSP Status][badge-nsp-image]][nsp-url] [![Dependency Status][badge-david-dm-image]][daviddm-url] [![devDependencies Status][badge-david-dm-dev-image]][daviddm-dev-url] <br>[![Build Status][badge-travis-image]][travis-url] [![Coverage percentage][badge-coveralls-image]][coveralls-url] [![Codacy quality][badge-codacy-image]][codacy-url]
 
 > ![Quote][quote-left-img] A business archetype is a primordial thing that occurs consistently and universally in business domainMs and business software systems.
 >
@@ -611,8 +611,8 @@ Graphic art by [icons8][icons8-license-url].
 [api-sdk-doc-party-preferences-url]: https://github.com/commonality/archetypes/wiki/SDK:-Party-API#preferences-api
 [badge-codacy-image]: https://api.codacy.com/project/badge/Grade/de7b30825ac649de8b7255e4303fb069
 [badge-coveralls-image]: https://coveralls.io/repos/commonality/archetypes/badge.svg
-[badge-coveralls-image]: https://david-dm.org/commonality/archetypes.svg?theme=shields.io
-[badge-coveralls-image]: https://david-dm.org/commonality/archetypes/dev-status.svg
+[badge-david-dm-image]: https://david-dm.org/commonality/archetypes.svg?theme=shields.io
+[badge-david-dm-dev-image]: https://david-dm.org/commonality/archetypes/dev-status.svg
 [badge-fossa-image]: https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Farchetypes.svg?type=shield
 [badge-fossa-large-image]: https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Farchetypes.svg?type=large
 [badge-greenkeeper-image]: https://badges.greenkeeper.io/commonality/archetypes.svg

@@ -1,13 +1,13 @@
 {
-  "name": "generator-community",
+  "name": "archetypes",
   "automock": false,
   "collectCoverage": true,
   "coverageDirectory": "./coverage",
   "coveragePathIgnorePatterns": [
     "/node_modules/",
     "/__tests__/__fixtures__/",
-    "/__fixtures__/",
-    "/__mocks__/"
+    "/__tests__/__mocks__/",
+    "/__tests__/"
   ],
   "coverageThreshold": {
     "global": {
@@ -19,8 +19,8 @@
   },
   "testPathIgnorePatterns": [
     "/__tests__/__fixtures__/",
-    "/__fixtures__/",
-    "/__mocks__/"
+    "/__tests__/__mocks__/",
+    "/__tests__/"
   ],
   "verbose": true
 }

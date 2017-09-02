@@ -7,13 +7,29 @@
     "email": "greg@swindle.net",
     "url": "https://github.com/commonality"
   },
+  "bugs": "https://github.com/commonality/archetypes/issues",
+  "commitplease": {
+    "style": "angular",
+    "types": [
+      "build",
+      "chore",
+      "ci",
+      "docs",
+      "feat",
+      "fix",
+      "perf",
+      "refactor",
+      "revert",
+      "style",
+      "test"
+    ],
+    "scope": "\\S+.*"
+  },
   "dependencies": {
     "chalk": "^2.1.0",
     "escomplex": "^2.0.0-alpha",
-    "generator-standard-readme": "1.0.3",
     "lodash": "^4.17.4",
     "standard-readme-spec": "1.1.3",
-    "swagger-cli": "1.0.0-beta.2",
     "update-notifier": "^2.2.0",
     "yeoman-generator": "^1.1.1",
     "yosay": "2.0.1"
@@ -39,11 +55,11 @@
     "eslint-plugin-xss": "0.1.8",
     "jest": "20.0.4",
     "jest-cli": "20.0.4",
-    "markdown-magic": "0.1.18",
-    "markdown-toc": "1.1.0",
     "nsp": "2.7.0",
+    "snyk": "1.40.2",
     "sonar-scanner": "3.0.3",
     "standard-version": "4.2.0",
+    "swagger-cli": "1.0.0-beta.2",
     "yeoman-assert": "3.0.0",
     "yeoman-test": "1.7.0"
   },
@@ -74,12 +90,20 @@
   "main": "generators/index.js",
   "repository": "commonality/archetypes",
   "scripts": {
-    "md-table": "cat package.json | md-table",
-    "prepublish": "nsp check",
-    "pretest": "eslint . --fix && npm run swagger:validate:all",
-    "sonar-scanner": "node_modules/sonar-scanner/bin/sonar-scanner",
-    "swagger:validate:all": "npm run swagger:validate:party",
-    "swagger:validate:party": "swagger validate schemas/v1/party/party.swagger.{json,yaml} --debug",
-    "test": "jest --config=jest.config.json"
+    "lint": "npm run lint:js",
+    "lint:js": "eslint . --fix ",
+    "lint:sonar": "node_modules/sonar-scanner/bin/sonar-scanner",
+    "lint:swagger:all": "npm run lint:swagger:party",
+    "lint:swagger:party": "swagger validate schemas/v1/party/party.swagger.{json,yaml} --debug",
+    "posttest": "npm run security",
+    "prepublish": "npm run security",
+    "pretest": "npm run lint && npm run lint:swagger:all",
+    "release": "standard-version",
+    "security": "npm run security:nsp:scan && npm run security:snyk:scan",
+    "security:nsp": "nsp",
+    "security:nsp:scan": "nsp check",
+    "security:snyk": "snyk",
+    "security:snyk:scan": "snyk monitor",
+    "test": "snyk test && jest --config=jest.config.json"
   }
 }

@@ -192,7 +192,7 @@ api.getByPartyIdentifier(partyIdentifier, callback)
 
 ### 4.1. Standards compliance
 
-<table>   <thead>     <tr><th>Standard</th><th>Contents</th></tr>   </thead>   <tfoot>   </tfoot>   <tbody>     <tr>       <td><a href=\"http://www.bipm.org/en/measurement-units/\">SI</a></td>       <td>International System of Units&mdash;Bureau International des Poids et Mesures (BIPM).</td>     </tr>   </tbody> </table>
+<table>   <thead>     <tr><th>Standard</th><th>Contents</th></tr>   </thead>   <tfoot>   </tfoot>   <tbody>     <tr>       <td><a href=\"http://www.bipm.org/en/measurement-units/\">SI</a>       <td>International System of Units&mdash;Bureau International des Poids et Mesures (BIPM).     </tr>   </tbody> </table>
 
 ### 4.2. OpenAPI 2.0 Specs
 
@@ -576,9 +576,9 @@ $ npm test
 >
 > Contributors must follow the [Angular commit conventions][angularjs-commit-message-guidelines-url] in order to support automated `CHANGELOG`, `package.json`, Git release `tags`, and semantic version updates.
 
-Once a PR has been approved (and passes all checks), topic branches are are merged into `master` on GitHub.
+#### 13.3.4.1. Prerequisites
 
-#### 13.3.4.1. Prerequisite: squash and merge into `master` with coventional commit messages
+Once a PR has been approved (and passes all checks), topic branches are are merged into `master` on GitHub.
 
 1. On the GitHub PR page, select _Squash and Merge_.
 2. Add a `<title>`, `<body>`, and `<footer>` that comply with the [Conventional Commits Specfication][conventional-commits-url].
@@ -606,7 +606,6 @@ $ npm release
 ```shell
 $ git push --follow-tags origin master; npm publish
 ```
-
 > ![Read more...][icon-user-manual-image] For `standard-version` configuration details, [read "Cut a Release" on the `conventional-changelog/standard-version's README` page][standard-version-cut-a-release-url].
 
 ## 14. Style guides
@@ -638,34 +637,17 @@ $ npm test
 
 The `archetypes` documentation uses this color palette:
 
-<table>
-  <tr>
-    <th>Light Grey</th>
-    <th>Platinum</th>
-    <th>Stil de Grain Yellow</th>
-    <th>Raisin Black</th>
-    <th>Jet</th>
-  </tr>
-  <tr>
-    <td align="center" bgcolor="#CFDBD5" width="120"><br><br><br><br><br></td>
-    <td align="center" bgcolor="#E8EDDF" width="120"><br><br><br><br><br></td>
-    <td align="center" bgcolor="#F5CB5C" width="120"><br><br><br><br><br></td>
-    <td align="center" bgcolor="#242423" width="120"><br><br><br><br><br></td>
-    <td align="center" bgcolor="#333533" width="120"><br><br><br><br><br></td>
-  </tr>
-  <tr>
-    <td align="center">`#CFDBD5`</td>
-    <td align="center">`#E8EDDF`</td>
-    <td align="center">`#F5CB5C`</td>
-    <td align="center">`#242423`</td>
-    <td align="center">`#333533`</td>
-  </tr>
-  <tr>
-    <td colspan="5">View the palette as: <a href="./docs/style-guide/archetypes-color-palette.pdf">PDF</a>, <a href="./docs/style-guide/archetypes-color-palette.png"><a href="">PNG</a>, <a href="./docs/style-guide/archetypes-color-palette.scss">SCSS</a>, or on <a href="https://coolors.co/cfdbd5-e8eddf-f5cb5c-242423-333533">coolor.com</a>.</td>
-  </tr>
-</table>
+[![Color palette][archetypes-color-palette-image]][coolor-palette-url]
 
+The colors are (from left to right):
 
+* `#CFDBD5`: Light Grey
+* `#E8EDDF`: Platinum
+* `#F5CB5C`: Stil de Grain Yellow
+* `#242423`: Raisin Black
+* `#333533`: Jet
+
+View the palette as: <a href="./docs/style-guide/archetypes-color-palette.pdf">PDF</a>, <a href="./docs/style-guide/archetypes-color-palette.png"><a href="">PNG</a>, <a href="./docs/style-guide/archetypes-color-palette.scss">SCSS</a>, or on <a href="">coolor.com</a>.
 
 ## 15. Semantic version and `CHANGELOG`
 
@@ -704,6 +686,7 @@ Graphic art by [icons8][icons8-license-url].
 [api-sdk-doc-party-parties-url]: https://github.com/commonality/archetypes/wiki/SDK:-Party-API#parties-api
 [api-sdk-doc-party-people-url]: https://github.com/commonality/archetypes/wiki/SDK:-Party-API#people-api
 [api-sdk-doc-party-preferences-url]: https://github.com/commonality/archetypes/wiki/SDK:-Party-API#preferences-api
+[archetypes-color-palette-image]: ./docs/style-guide/archetypes-color-palette.png
 [business-archetypes-logo-image]: ./docs/img/logo-commonalaxy.png
 [changelog-url]: ./CHANGELOG.md
 [cla-url]: https://www.clahub.com/agreements/commonality/archetypes
@@ -788,3 +771,4 @@ Graphic art by [icons8][icons8-license-url].
 [swagger-validity-url]: https://online.swagger.io/validator?url=http://api.swindle.net/archetypes/v1/schemas/party/party.swagger.json
 [travis-badge-image]: https://img.shields.io/travis/commonality/archetypes.svg?branch=master&style=flat-square
 [travis-url]: https://travis-ci.org/commonality/archetypes
+[coolor-palette-url]: https://coolors.co/cfdbd5-e8eddf-f5cb5c-242423-333533

@@ -545,17 +545,18 @@ The following CLI [`npm-scripts`][npm-scripts-docs-url] are available to you (as
 <!-- AUTO-GENERATED-CONTENT:START (SCRIPTS) -->
 | Script | Description |
 |--------|-------------|
-| `docs` | `node generate-docs.js` |
+| `docs` | `node generate-docs.js && npm run docs:toc` |
+| `docs:toc` | `./node_modules/.bin/markdown-toc -i README.md` |
 | `lint` | `npm run lint:js && npm run lint:swagger:all` |
 | `lint:js` | `eslint . --fix ` |
 | `lint:sonar` | `node_modules/sonar-scanner/bin/sonar-scanner` |
 | `lint:swagger:all` | `npm run lint:swagger:party` |
-| `lint:swagger:party` | `swagger validate schemas/v1/party/party.swagger.{json,yaml} --debug` |
+| `lint:swagger:party` | `swagger validate schemas/v1/party/party.swagger.json --debug` |
 | `prepare` | `npm run security` |
 | `prepublishOnly` | `npm run docs` |
 | `preversion` | `npm run docs` |
 | `release` | `standard-version` |
-| `security` | `npm run security:nsp:scan && npm run security:snyk:auth && npm run security:snyk:all` |
+| `security` | `npm run security:nsp:scan && npm run security:snyk:all` |
 | `security:nsp` | `nsp` |
 | `security:nsp:scan` | `nsp check` |
 | `security:snyk` | `snyk` |
@@ -565,7 +566,7 @@ The following CLI [`npm-scripts`][npm-scripts-docs-url] are available to you (as
 | `security:snyk:scan` | `snyk test` |
 | `pretest` | `npm run lint` |
 | `test` | `jest --config=jest.config.json` |
-| `posttest` | `npm run security` |
+| `posttest` | `npm run security && npm run docs` |
 <!-- AUTO-GENERATED-CONTENT:START (SCRIPTS) -->
 <!-- AUTO-GENERATED-CONTENT:END -->
 

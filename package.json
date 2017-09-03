@@ -55,6 +55,7 @@
     "markdown-magic-github-contributors": "0.0.3",
     "markdown-magic-package-scripts": "1.2.0",
     "markdown-magic-subpackage-list": "1.1.1",
+    "markdown-toc": "1.1.0",
     "nsp": "2.7.0",
     "snyk": "1.40.2",
     "sonar-scanner": "3.0.3",
@@ -77,7 +78,8 @@
   "license": "Apache-2.0",
   "repository": "commonality/archetypes",
   "scripts": {
-    "docs": "node generate-docs.js",
+    "docs": "node generate-docs.js && npm run docs:toc",
+    "docs:toc": "./node_modules/.bin/markdown-toc -i README.md",
     "lint": "npm run lint:js && npm run lint:swagger:all",
     "lint:js": "eslint . --fix ",
     "lint:sonar": "node_modules/sonar-scanner/bin/sonar-scanner",

@@ -545,8 +545,8 @@ The following CLI [`npm-scripts`][npm-scripts-docs-url] are available to you (as
 <!-- AUTO-GENERATED-CONTENT:START (SCRIPTS) -->
 | Script | Description |
 |--------|-------------|
-| `docs` | `md-magic --path 'README.md' --ignore 'node_modules'` |
-| `lint` | `npm run lint:js` |
+| `docs` | `node generate-docs.js` |
+| `lint` | `npm run lint:js && npm run lint:swagger:all` |
 | `lint:js` | `eslint . --fix ` |
 | `lint:sonar` | `node_modules/sonar-scanner/bin/sonar-scanner` |
 | `lint:swagger:all` | `npm run lint:swagger:party` |
@@ -555,7 +555,7 @@ The following CLI [`npm-scripts`][npm-scripts-docs-url] are available to you (as
 | `prepublishOnly` | `npm run docs` |
 | `preversion` | `npm run docs` |
 | `release` | `standard-version` |
-| `security` | `npm run security:nsp:scan && npm run security:snyk:scan` |
+| `security` | `npm run security:nsp:scan && npm run security:snyk:auth && npm run security:snyk:all` |
 | `security:nsp` | `nsp` |
 | `security:nsp:scan` | `nsp check` |
 | `security:snyk` | `snyk` |
@@ -563,7 +563,7 @@ The following CLI [`npm-scripts`][npm-scripts-docs-url] are available to you (as
 | `security:snyk:auth` | `snyk auth $SNYK_TOKEN` |
 | `security:snyk:monitor` | `snyk monitor --org=commonality` |
 | `security:snyk:scan` | `snyk test` |
-| `pretest` | `npm run lint && npm run lint:swagger:all` |
+| `pretest` | `npm run lint` |
 | `test` | `jest --config=jest.config.json` |
 | `posttest` | `npm run security` |
 <!-- AUTO-GENERATED-CONTENT:START (SCRIPTS) -->
@@ -598,11 +598,11 @@ $ npm run pretest
 
 $ npm test
 
-# Lint Javascript callouts and Swagger *.yml or *.json docs:
-$ npm run lint
+# Only lint the Party OpenAPI specification:
+$ npm run lint:swagger:party
 
 # You can also validate your Swagger docs independently with:
-$ npm run swagger:lint
+$ npm run lint:swagger:all
 
 ```
 
@@ -617,14 +617,11 @@ $ npm run swagger:lint
 # Code quality analysis runs before every test execution:
 $ npm test
 
-# Validate Swagger and analyze Javascript callouts:
+# Only validate JavaScript and OpenAPI specs
 $ npm run lint
 
-# Only run ESLint for a CLI summary:
-$ npm run eslint:stylish
-
-# Generate an HTML report with links to errors and warnings:
-$ npm run eslint:html
+# Only run ESLint:
+$ npm run lint:js
 ```
 
 #### 13.3.3. Spec (unit test) execution and code coverage
@@ -715,7 +712,7 @@ The colors are (from left to right):
 * `#242423`: Raisin Black
 * `#333533`: Jet
 
-View the palette as [PDF][archetypes-color-palette-pdf-url], [PNG][archetypes-color-palette-png-url], [SCSS][archetypes-color-palette-scss-url], or on coolor.com.
+View the palette as [PDF][archetypes-color-palette-pdf-url], [PNG][archetypes-color-palette-png-url], [SCSS][archetypes-color-palette-scss-url], or on [coolors.com][coolor-palette-url].
 
 ## 15. Semantic version and `CHANGELOG`
 

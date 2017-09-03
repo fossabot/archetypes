@@ -78,7 +78,7 @@
   "repository": "commonality/archetypes",
   "scripts": {
     "docs": "node generate-docs.js",
-    "lint": "npm run lint:js",
+    "lint": "npm run lint:js && npm run lint:swagger:all",
     "lint:js": "eslint . --fix ",
     "lint:sonar": "node_modules/sonar-scanner/bin/sonar-scanner",
     "lint:swagger:all": "npm run lint:swagger:party",
@@ -86,7 +86,7 @@
     "posttest": "npm run security",
     "prepare": "npm run security",
     "prepublishOnly": "npm run docs",
-    "pretest": "npm run lint && npm run lint:swagger:all",
+    "pretest": "npm run lint",
     "preversion": "npm run docs",
     "release": "standard-version",
     "security": "npm run security:nsp:scan && npm run security:snyk:auth && npm run security:snyk:all",

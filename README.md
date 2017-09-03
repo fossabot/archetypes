@@ -2,18 +2,25 @@
 
 # `archetypes`  ⍟  [![NPM version][npm-badge-image]][npm-url]
 
-[![License][license-image]][license-url]<!-- [![FOSSA Status][fossa-image]][fossa-url]--> [![NSP Status][nsp-badge-image]][nsp-url] [![Synk Vulnerabilities][snyk-vulnerabilities-badge-image]][offsite-snyk-vulnerabilities-url]<br>[![StackShare][stack-share-badge-image]][stack-share-url] [![Dependency Status][david-dm-badge-image]][daviddm-url] [![devDependencies Status][david-dm-dev-badge-image]][daviddm-dev-url] <br>[![Build Status][travis-badge-image]][travis-url] [![Coverage percentage][coveralls-badge-image]][coveralls-url] [![Codacy quality][codacy-badge-image]][codacy-url]
+[![License][license-image]][license-url] [![NSP Status][nsp-badge-image]][nsp-url] [![Synk Vulnerabilities][snyk-vulnerabilities-badge-image]][offsite-snyk-vulnerabilities-url]<br>[![StackShare][stack-share-badge-image]][stack-share-url] [![Dependency Status][david-dm-badge-image]][daviddm-url] [![devDependencies Status][david-dm-dev-badge-image]][daviddm-dev-url] <br>[![Build Status][travis-badge-image]][travis-url] [![Coverage percentage][coveralls-badge-image]][coveralls-url] [![Codacy quality][codacy-badge-image]][codacy-url]
 
-> ![Quote][quote-left-img] A business archetype is a primordial thing that occurs consistently and universally in business domainMs and business software systems.
+> ![Quote][quote-left-img] A business archetype is a primordial thing that occurs consistently and universally in business domains and business software systems.
 >
 > (Arlow & Neustadt, [_Enterprise patterns and MDA: building better software with archetype patterns and UML_][mda-book-url], 2006, p. 5)
+
+__`archetypes` model how `Parties`&mdash;`People` and `Companies`&mdash;exchange `Products` and `Services` with `Payments` (normally `Money` or other `Locale`-based `Currencies` like gift-cards). The exchanges are recorded from beginning to end as `Orders` and managed as Customer Relationships (CRM) between buyers and sellers (with `PartyRelationships`). When necessary, `Rules` constrain and determine the types of relationships allowed; how products can be packaged; and whether discounts can be applied.__
+
+These __business `archetypes`__ are expressed as __models__ in open, vendor-neutral __OpenAPI/Swagger__ specifications, which provide:
+
+1. __A common vocabulary and operating framework__ for how `Parties`&mdash;`People` and `Companies`&mdash;exchange goods and services for `Money` (with `Locale`-based `Currencies`), as well as managing these relationships as `Customers` (CRM).
+2. __Executable documentation__ that articulates these models and how they interact.
+3. __Open-source tools that automatically generate microservice "stubs" and client SDKs__.
 
 ## Table of contents
 
 <!-- toc -->
 
-- [1. Getting started](#1-getting-started)
-  * [1.1. Installation](#11-installation)
+- [1. Installation](#1-installation)
   * [1.2. Generating servers and clients](#12-generating-servers-and-clients)
     + [1.2.1. `swagger-api` and `swagger-codegen`](#121-swagger-api-and-swagger-codegen)
     + [1.2.2. Swagger Editor](#122-swagger-editor)
@@ -45,27 +52,32 @@
   * [Roadmap](#roadmap-5)
 - [11. `Order`](#11-order)
   * [Roadmap](#roadmap-6)
-- [12. Product Development and Delivery](#12-product-development-and-delivery)
+- [12. Product development and delivery](#12-product-development-and-delivery)
   * [12.1. Built With](#121-built-with)
   * [12.2. Prerequisites](#122-prerequisites)
   * [12.3. Set up a development environment](#123-set-up-a-development-environment)
+  * [12.4. `npm-scripts`](#124-npm-scripts)
 - [13. DevSecOps](#13-devsecops)
   * [13.1. Builds](#131-builds)
-  * [13.2. Tests and quality gates](#132-test-and-quality-gates)
+  * [13.2. Tests and quality gates](#132-tests-and-quality-gates)
     + [13.2.1. Swagger validation](#1321-swagger-validation)
     + [13.2.2. Linting](#1322-linting)
     + [13.3.3. Spec (unit test) execution and code coverage](#1333-spec-unit-test-execution-and-code-coverage)
   * [13.3.4. Deploy/Publish](#1334-deploypublish)
-- [14. Style guide](#14-style-guide)
+    + [13.3.4.1. Prerequisites](#13341-prerequisites)
+    + [13.3.4.2. Publish on `npm`](#13342-publish-on-npm)
+- [14. Style guides](#14-style-guides)
+  * [14.1. JavaScript source code](#141-javascript-source-code)
+  * [14.2. Color palette](#142-color-palette)
 - [15. Semantic version and `CHANGELOG`](#15-semantic-version-and-changelog)
 - [16. Contributing to `commonality/archetypes`](#16-contributing-to-commonalityarchetypes)
+  * [16.1. Contribution workflows summarized](#161-contribution-workflows-summarized)
+  * [16.2. Contributors](#162-contributors)
 - [17. Licenses](#17-licenses)
 
 <!-- tocstop -->
 
-## 1. Getting started
-
-### 1.1. Installation
+## 1. Installation
 
 Open a Terminal and run this command:
 
@@ -247,26 +259,26 @@ api.getBaseUnitByName(name, callback)
 [![icon-road-milestone-image] MVP2: Money](https://github.com/commonality/archetypes/milestone/2)
 
 <!--
-### 5.1. OpenAPI 2.0 Specs
+      ### 5.1. OpenAPI 2.0 Specs
 
-[![Quantity's Swagger validity][swagger-validity-money-badge-image]][swagger-validity-money-url]
+      [![Quantity's Swagger validity][swagger-validity-money-badge-image]][swagger-validity-money-url]
 
-* [`JSON`](http://api.swindle.net/archetypes/v1/schemas/money/money.swagger.json)
-* [`YAML`](http://api.swindle.net/archetypes/v1/schemas/money/money.swagger.yaml)
+      * [`JSON`](http://api.swindle.net/archetypes/v1/schemas/money/money.swagger.json)
+      * [`YAML`](http://api.swindle.net/archetypes/v1/schemas/money/money.swagger.yaml)
 
-### 5.2. API documentation
+      ### 5.2. API documentation
 
-* [`JavaScript`](./docs/api/archetypes/v1/money/js/README.md)
-* [`Ruby`](./docs/api/archetypes/v1/party/money/README.md)
+      * [`JavaScript`](./docs/api/archetypes/v1/money/js/README.md)
+      * [`Ruby`](./docs/api/archetypes/v1/party/money/README.md)
 
 
-### 5.3. Usage example
+      ### 5.3. Usage example
 
-**Retrieve an `` by identifier** with JavaScript:
+      **Retrieve an `` by identifier** with JavaScript:
 
-```js
+      ```js
 
-```
+      ```
 -->
 
 ## 6. `PartyRelationship`
@@ -282,26 +294,26 @@ api.getBaseUnitByName(name, callback)
 [![icon-road-milestone-image] MVP3: PartyRelationships and Rules](https://github.com/commonality/archetypes/milestone/3)
 
 <!--
-### 6.1. OpenAPI 2.0 Specs
+      ### 6.1. OpenAPI 2.0 Specs
 
-[![Quantity's Swagger validity][swagger-validity-quantity-badge-image]][swagger-validity-quantity-url]
+      [![Quantity's Swagger validity][swagger-validity-quantity-badge-image]][swagger-validity-quantity-url]
 
-* [`JSON`](http://api.swindle.net/archetypes/v1/schemas/party-relationship/party-relationship.swagger.json)
-* [`YAML`](http://api.swindle.net/archetypes/v1/schemas/party-relationship/party-relationship.swagger.yaml)
+      * [`JSON`](http://api.swindle.net/archetypes/v1/schemas/party-relationship/party-relationship.swagger.json)
+      * [`YAML`](http://api.swindle.net/archetypes/v1/schemas/party-relationship/party-relationship.swagger.yaml)
 
-### 6.2. API documentation
+      ### 6.2. API documentation
 
-* [`JavaScript`](./docs/api/archetypes/v1/party-relationship/js/README.md)
-* [`Ruby`](./docs/api/archetypes/v1/party/party-relationship/README.md)
+      * [`JavaScript`](./docs/api/archetypes/v1/party-relationship/js/README.md)
+      * [`Ruby`](./docs/api/archetypes/v1/party/party-relationship/README.md)
 
 
-### 6.3. Usage example
+      ### 6.3. Usage example
 
-**Retrieve an `` by identifier** with JavaScript:
+      **Retrieve an `` by identifier** with JavaScript:
 
-```js
+      ```js
 
-```
+      ```
 -->
 
 ## 7. `Rule`
@@ -317,26 +329,26 @@ api.getBaseUnitByName(name, callback)
 [![icon-road-milestone-image] MVP3: PartyRelationships and Rules](https://github.com/commonality/archetypes/milestone/3)
 
 <!--
-### 7.1. OpenAPI 2.0 Specs
+      ### 7.1. OpenAPI 2.0 Specs
 
-[![Rule's Swagger validity][swagger-validity-rules-badge-image]][swagger-validity-rules-url]
+      [![Rule's Swagger validity][swagger-validity-rules-badge-image]][swagger-validity-rules-url]
 
-* [`JSON`](http://api.swindle.net/archetypes/v1/schemas/rules/rules.swagger.json)
-* [`YAML`](http://api.swindle.net/archetypes/v1/schemas/rules/rules.swagger.yaml)
+      * [`JSON`](http://api.swindle.net/archetypes/v1/schemas/rules/rules.swagger.json)
+      * [`YAML`](http://api.swindle.net/archetypes/v1/schemas/rules/rules.swagger.yaml)
 
-### 7.2. API documentation
+      ### 7.2. API documentation
 
-* [`JavaScript`](./docs/api/archetypes/v1/rules/js/README.md)
-* [`Ruby`](./docs/api/archetypes/v1/rules/README.md)
+      * [`JavaScript`](./docs/api/archetypes/v1/rules/js/README.md)
+      * [`Ruby`](./docs/api/archetypes/v1/rules/README.md)
 
 
-### 7.3. Usage example
+      ### 7.3. Usage example
 
-**Retrieve an `` by identifier** with JavaScript:
+      **Retrieve an `` by identifier** with JavaScript:
 
-```js
+      ```js
 
-```
+      ```
 -->
 
 ## 8. Customer relationship management (CRM)
@@ -352,26 +364,26 @@ api.getBaseUnitByName(name, callback)
 [![icon-road-milestone-image] MVP4: Customer relationship management (CRM)](https://github.com/commonality/archetypes/milestone/4)
 
 <!--
-### 8.1. OpenAPI 2.0 Specs
+      ### 8.1. OpenAPI 2.0 Specs
 
-[![Customer relationship management (CRM) Swagger validity][swagger-validity-crm-badge-image]][swagger-validity-crm-url]
+      [![Customer relationship management (CRM) Swagger validity][swagger-validity-crm-badge-image]][swagger-validity-crm-url]
 
-* [`JSON`](http://api.swindle.net/archetypes/v1/schemas/crm/crm.swagger.json)
-* [`YAML`](http://api.swindle.net/archetypes/v1/schemas/crm/crm.swagger.yaml)
+      * [`JSON`](http://api.swindle.net/archetypes/v1/schemas/crm/crm.swagger.json)
+      * [`YAML`](http://api.swindle.net/archetypes/v1/schemas/crm/crm.swagger.yaml)
 
-### 8.2. API documentation
+      ### 8.2. API documentation
 
-* [`JavaScript`](./docs/api/archetypes/v1/crm/js/README.md)
-* [`Ruby`](./docs/api/archetypes/v1/crm/README.md)
+      * [`JavaScript`](./docs/api/archetypes/v1/crm/js/README.md)
+      * [`Ruby`](./docs/api/archetypes/v1/crm/README.md)
 
 
-### 8.3. Usage example
+      ### 8.3. Usage example
 
-**Retrieve an `` by identifier** with JavaScript:
+      **Retrieve an `` by identifier** with JavaScript:
 
-```js
+      ```js
 
-```
+      ```
 -->
 
 ## 9. `Product`
@@ -387,26 +399,26 @@ api.getBaseUnitByName(name, callback)
 [![icon-road-milestone-image] MVP5: Product](https://github.com/commonality/archetypes/milestone/5)
 
 <!--
-### 9.1. OpenAPI 2.0 Specs
+      ### 9.1. OpenAPI 2.0 Specs
 
-[![Product's Swagger validity][swagger-validity-product-badge-image]][swagger-validity-product-url]
+      [![Product's Swagger validity][swagger-validity-product-badge-image]][swagger-validity-product-url]
 
-* [`JSON`](http://api.swindle.net/archetypes/v1/schemas/product/product.swagger.json)
-* [`YAML`](http://api.swindle.net/archetypes/v1/schemas/product/product.swagger.yaml)
+      * [`JSON`](http://api.swindle.net/archetypes/v1/schemas/product/product.swagger.json)
+      * [`YAML`](http://api.swindle.net/archetypes/v1/schemas/product/product.swagger.yaml)
 
-### 9.2. API documentation
+      ### 9.2. API documentation
 
-* [`JavaScript`](./docs/api/archetypes/v1/product/js/README.md)
-* [`Ruby`](./docs/api/archetypes/v1/product/README.md)
+      * [`JavaScript`](./docs/api/archetypes/v1/product/js/README.md)
+      * [`Ruby`](./docs/api/archetypes/v1/product/README.md)
 
 
-### 9.3. Usage example
+      ### 9.3. Usage example
 
-**Retrieve an `` by identifier** with JavaScript:
+      **Retrieve an `` by identifier** with JavaScript:
 
-```js
+      ```js
 
-```
+      ```
 -->
 
 ## 10. `Inventory`
@@ -422,26 +434,26 @@ api.getBaseUnitByName(name, callback)
 [![icon-road-milestone-image] MVP6: Inventory](https://github.com/commonality/archetypes/milestone/6)
 
 <!--
-### 10.1. OpenAPI 2.0 Specs
+      ### 10.1. OpenAPI 2.0 Specs
 
-[![Inventory's Swagger validity][swagger-validity-inventory-badge-image]][swagger-validity-inventory-url]
+      [![Inventory's Swagger validity][swagger-validity-inventory-badge-image]][swagger-validity-inventory-url]
 
-* [`JSON`](http://api.swindle.net/archetypes/v1/schemas/inventory/inventory.swagger.json)
-* [`YAML`](http://api.swindle.net/archetypes/v1/schemas/inventory/inventory.swagger.yaml)
+      * [`JSON`](http://api.swindle.net/archetypes/v1/schemas/inventory/inventory.swagger.json)
+      * [`YAML`](http://api.swindle.net/archetypes/v1/schemas/inventory/inventory.swagger.yaml)
 
-### 10.2. API documentation
+      ### 10.2. API documentation
 
-* [`JavaScript`](./docs/api/archetypes/v1/inventory/js/README.md)
-* [`Ruby`](./docs/api/archetypes/v1/inventory/README.md)
+      * [`JavaScript`](./docs/api/archetypes/v1/inventory/js/README.md)
+      * [`Ruby`](./docs/api/archetypes/v1/inventory/README.md)
 
 
-### 10.3. Usage example
+      ### 10.3. Usage example
 
-**Retrieve an `` by identifier** with JavaScript:
+      **Retrieve an `` by identifier** with JavaScript:
 
-```js
+      ```js
 
-```
+      ```
 -->
 
 ## 11. `Order`
@@ -456,25 +468,61 @@ api.getBaseUnitByName(name, callback)
 
 [![icon-road-milestone-image] MVP7: Inventory](https://github.com/commonality/archetypes/milestone/7)
 
-## 12. Product Development and Delivery
+## 12. Product development and delivery
+![Packaging][icon-package-image]
+
+
 > [![PRs Welcome][prs-welcome-badge-image]][prs-welcome-url] We welcome contributors and pull requests!
 >
 > Interested in development contributions? Great! Check out our guidelines for [Contributing to `archetypes`][contributing-url] for details.
 
 ### 12.1. Built With
-> [![StackShare][stack-share-badge-image]][stack-share-news-feed-url]
->
-> [`markdown-magic-dependency-table`](https://www.npmjs.com/package/markdown-magic-dependency-table) to auto-generate a table of dependencies from `package.json's` data, but nothing works, yet.
 
-DEPENDENCYTABLE
+[![StackShare][stack-share-badge-image]][stack-share-news-feed-url]
 
+`archetypes` requires the following [tech-stack][stack-share-news-feed-url] to either run, build, test, or deploy:
+
+<!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:dev=true) -->
+| **Dependency** | **Description** | **Version** | **Type** |
+| -------------- | --------------- | ----------- | -------- |
+ | [lodash@^4.17.4](https://lodash.com/) | Lodash modular utilities. | 4.17.4 | production |
+ | [standard-readme-spec@1.1.3](https://github.com/RichardLitt/standard-readme) | Readme Standard Style | 1.1.3 | production |
+ | [babel-jest@20.0.3](https://github.com/facebook/jest#readme) | Jest plugin to use babel for transformation. | 20.0.3 | dev |
+ | [babel-preset-env@1.6.0](https://babeljs.io/) | A Babel preset for each environment. | 1.6.0 | dev |
+ | [babelify@7.3.0](https://github.com/babel/babelify) | Babel browserify transform | 7.3.0 | dev |
+ | [commitplease@2.7.10](https://github.com/jzaefferer/commitplease#readme) | Validates strings as commit messages | 2.7.10 | dev |
+ | [coveralls@^2.13.1](https://github.com/nickmerwin/node-coveralls#readme) | takes json-cov output into stdin and POSTs to coveralls.io | 2.13.1 | dev |
+ | [eslint@4.5.0](http://eslint.org) | An AST-based pattern checker for JavaScript. | 4.5.0 | dev |
+ | [eslint-config-xo-space@0.16.0](https://github.com/sindresorhus/eslint-config-xo-space#readme) | ESLint shareable config for XO with 2-space indent | 0.16.0 | dev |
+ | [eslint-plugin-import@2.7.0](https://github.com/benmosher/eslint-plugin-import) | Import with sanity. | 2.7.0 | dev |
+ | [eslint-plugin-jest@20.0.3](https://github.com/facebook/jest#readme) | Eslint rules for Jest | 20.0.3 | dev |
+ | [eslint-plugin-jsdoc@3.1.2](https://github.com/gajus/eslint-plugin-jsdoc#readme) | JSDoc linting rules for ESLint. | 3.1.2 | dev |
+ | [eslint-plugin-no-unsafe-innerhtml@1.0.16](https://github.com/mozfreddyb/eslint-plugin-no-unsafe-innerhtml/) | custom ESLint rule to disallows unsafe innerHTML, outerHTML and insertAdjacentHTML | 1.0.16 | dev |
+ | [eslint-plugin-no-unsanitized@2.0.1](https://github.com/mozilla/eslint-plugin-no-unsanitized/) | ESLint rule to disallow unsanitized code | 2.0.1 | dev |
+ | [eslint-plugin-node@5.1.1](https://github.com/mysticatea/eslint-plugin-node#readme) | Additional ESLint's rules for Node.js | 5.1.1 | dev |
+ | [eslint-plugin-promise@3.5.0](https://github.com/xjamundx/eslint-plugin-promise#readme) | Enforce best practices for JavaScript promises | 3.5.0 | dev |
+ | [eslint-plugin-scanjs-rules@0.2.1](https://github.com/mozfreddyb/eslint-plugin-scanjs-rules/) | ESLint plugin that contains ScanJS rules | 0.2.1 | dev |
+ | [eslint-plugin-security@1.4.0](https://github.com/nodesecurity/eslint-plugin-security#readme) | Security rules for eslint | 1.4.0 | dev |
+ | [eslint-plugin-standard@3.0.1](https://github.com/xjamundx/eslint-plugin-standard#readme) | ESlint Plugin for the Standard Linter | 3.0.1 | dev |
+ | [eslint-plugin-xss@0.1.8](https://npmjs.org/package/eslint-plugin-xss) | Validates XSS related issues of mixing HTML and non-HTML content in variables. | 0.1.8 | dev |
+ | [jest@20.0.4](http://facebook.github.io/jest/) | Delightful JavaScript Testing. | 20.0.4 | dev |
+ | [jest-cli@20.0.4](http://facebook.github.io/jest/) | Delightful JavaScript Testing. | 20.0.4 | dev |
+ | [markdown-magic@0.1.18](https://npmjs.org/package/markdown-magic) | Automatically update markdown files with content from external sources | 0.1.18 | dev |
+ | [markdown-magic-dependency-table@1.2.2](https://github.com/camacho/markdown-magic-dependency-table#readme) | Generate table of information about dependencies automatically in markdown | 1.2.2 | dev |
+ | [markdown-magic-package-scripts@1.2.0](https://github.com/camacho/markdown-magic-package-scripts#readme) | Print list of scripts in package.json with descriptions | 1.2.0 | dev |
+ | [markdown-magic-subpackage-list@1.1.1](https://github.com/camacho/markdown-magic-subpackage-list#readme) | Print a list of subpackages for markdown file | 1.1.1 | dev |
+ | [nsp@2.7.0](https://github.com/nodesecurity/nsp#readme) | The Node Security (nodesecurity.io) command line interface | 2.7.0 | dev |
+ | [snyk@1.40.2](https://github.com/snyk/snyk#readme) | snyk library and cli utility | 1.40.2 | dev |
+ | [sonar-scanner@3.0.3](https://github.com/bcaudan/node-sonar-scanner) | Wrap sonar-scanner as a node module | 3.0.3 | dev |
+ | [standard-version@4.2.0](https://github.com/conventional-changelog/standard-version#readme) | replacement for `npm version` with automatic CHANGELOG generation | 4.2.0 | dev |
+ | [swagger-cli@1.0.0-beta.2](https://github.com/BigstickCarpet/swagger-cli) | Swagger 2.0 command-line tool | 1.0.0-beta.2 | dev |
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+__*Keep track of `archetypes'` tech-stack with these news and RSS feeds.*__
 > * [![StackShare news feed][stack-share-news-feed-image] __StackShare News Feed:__ Read the latest news about the tools and dependencies `commonality/archetypes`][stack-share-news-feed-url].
 > * [![StackShare RSS feed][stack-share-rss-feed-image] __StackShare RSS Feed:__ Subscribe to news about `archetypes's` tools and dependencies][stack-share-rss-feed-url].
 
 ### 12.2. Prerequisites
-
-[offsite-nodejs-url]: https://nodejs.org/
-[offsite-markdown-toc-url]: https://github.com/jonschlinkert/markdown-toc
 
  1. [__`Node.js`__][offsite-nodejs-url]: `commonality/archetypes` product development and delivery requires `Node.js` and its package manager, `npm`.
  2. [__`markdown-toc`__][offsite-markdown-toc-url] is recommended, but not required, as long as the REAME's table of contents work and accurately reflects header changes.
@@ -490,16 +538,33 @@ $ cd archetypes/
 $ npm install
 ```
 
-<!-- ### Configuration
+### 12.4. `npm-scripts`
 
-Here you should write what are all of the configurations a user can enter when using the project. -->
+The following CLI [`npm-scripts`][npm-scripts-docs-url] are available to you (assuming you're human, gentle reader) and CI-services.
 
-<!-- ### Data persistence
-
-Explain what database/datastore (and version) is used (if any). Provide
-
- * Download links,
- * Datastore design and schemas, relations etc... -->
+<!-- AUTO-GENERATED-CONTENT:START (SCRIPTS) -->
+| Script | Description |
+|--------|-------------|
+| `docs` | `md-magic --path 'README.md' --ignore 'node_modules'` |
+| `lint` | `npm run lint:js` |
+| `lint:js` | `eslint . --fix ` |
+| `lint:sonar` | `node_modules/sonar-scanner/bin/sonar-scanner` |
+| `lint:swagger:all` | `npm run lint:swagger:party` |
+| `lint:swagger:party` | `swagger validate schemas/v1/party/party.swagger.{json,yaml} --debug` |
+| `prepare` | `npm run security` |
+| `prepublishOnly` | `npm run docs` |
+| `preversion` | `npm run docs` |
+| `release` | `standard-version` |
+| `security` | `npm run security:nsp:scan && npm run security:snyk:scan` |
+| `security:nsp` | `nsp` |
+| `security:nsp:scan` | `nsp check` |
+| `security:snyk` | `snyk` |
+| `security:snyk:scan` | `snyk test` |
+| `pretest` | `npm run lint && npm run lint:swagger:all` |
+| `test` | `jest --config=jest.config.json` |
+| `posttest` | `npm run security` |
+<!-- AUTO-GENERATED-CONTENT:START (SCRIPTS) -->
+<!-- AUTO-GENERATED-CONTENT:END -->
 
 ## 13. DevSecOps
 
@@ -647,7 +712,7 @@ The colors are (from left to right):
 * `#242423`: Raisin Black
 * `#333533`: Jet
 
-View the palette as: <a href="./docs/style-guide/archetypes-color-palette.pdf">PDF</a>, <a href="./docs/style-guide/archetypes-color-palette.png"><a href="">PNG</a>, <a href="./docs/style-guide/archetypes-color-palette.scss">SCSS</a>, or on <a href="">coolor.com</a>.
+View the palette as [PDF][archetypes-color-palette-pdf-url], [PNG][archetypes-color-palette-png-url], [SCSS][archetypes-color-palette-scss-url], or on coolor.com.
 
 ## 15. Semantic version and `CHANGELOG`
 
@@ -661,13 +726,38 @@ Contributions are community-driven stories with a beginning, a middle, and an en
 * [Code of Conduct][code-of-conduct-url]
 * [Contributing][contributing-url] to `commonality/archetypes`
 
+
+### 16.1. Contribution workflows summarized
+
+We use the [feature-branch-workflow][] to accept modifications, where contributors:
+
+1. Create an issue related to the problem you want to fix (good for traceability and cross-reference)
+2. Fork the repository
+3. Create a branch (optionally with the reference to the issue in the name)
+4. Work it
+5. Commit incrementally with readable and detailed commit messages
+6. Submit a pull-request against the master branch of this repository.
+
+We'll take care of tagging your issue with the appropriated labels and answer within a week (hopefully less!) to the problem you encounter.
+
+### 16.2. Contributors
+
+Thanks goes to these wonderful people:
+
+<!-- ⛔️ AUTO-GENERATED-CONTENT:START (CONTRIBUTORS) -->
+| **Commits** | **Contributor** |
+| --- | --- |
+| 7 | [gregswindle](https://github.com/gregswindle) |
+
+<!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
+
 ## 17. Licenses
 
 [![License][license-image]][license-url] © [Greg Swindle](https://githbub.com/commonality).
 
-<!-- You can review all __third-party dependencies' licenses__ on [FOSSA][fossa-large-badge-image].
+You can review all __third-party dependencies' licenses__ on [FOSSA][fossa-large-badge-image].
 
-![FOSSA Status][fossa-large-badge-image] -->
+![FOSSA Status][fossa-large-badge-image]
 
 ---
 
@@ -687,6 +777,9 @@ Graphic art by [icons8][icons8-license-url].
 [api-sdk-doc-party-people-url]: https://github.com/commonality/archetypes/wiki/SDK:-Party-API#people-api
 [api-sdk-doc-party-preferences-url]: https://github.com/commonality/archetypes/wiki/SDK:-Party-API#preferences-api
 [archetypes-color-palette-image]: ./docs/style-guide/archetypes-color-palette.png
+[archetypes-color-palette-pdf-url]: ./docs/style-guide/archetypes-color-palette.pdf
+[archetypes-color-palette-png-url]: ./docs/style-guide/archetypes-color-palette.png
+[archetypes-color-palette-scss-url]: ./docs/style-guide/archetypes-color-palette.scss
 [business-archetypes-logo-image]: ./docs/img/logo-commonalaxy.png
 [changelog-url]: ./CHANGELOG.md
 [cla-url]: https://www.clahub.com/agreements/commonality/archetypes
@@ -698,6 +791,7 @@ Graphic art by [icons8][icons8-license-url].
 [conventional-changelog-url]: https://github.com/conventional-changelog/conventional-changelog
 [conventional-commits-badge-image]: https://img.shields.io/badge/conventional%20commits-1.0.0-yellow.svg?style=flat-square
 [conventional-commits-url]: https://conventionalcommits.org/
+[coolor-palette-url]: https://coolors.co/cfdbd5-e8eddf-f5cb5c-242423-333533
 [coveralls-badge-image]: https://img.shields.io/coveralls/repos/commonality/archetypes/badge.svg?style=flat-square
 [coveralls-url]: https://coveralls.io/r/commonality/archetypes
 [david-dm-badge-image]: https://img.shields.io/david/dev/commonality/archetypes.svg?style=flat-square
@@ -715,6 +809,7 @@ Graphic art by [icons8][icons8-license-url].
 [icon-jest-image]: ./docs/img/tech-stack/icon-jest-50.jpeg
 [icon-nodejs-image]: ./docs/img/tech-stack/icon-nodejs-50.png
 [icon-npm-image]: ./docs/img/tech-stack/icon-npm-50.png
+[icon-package-image]: ./docs/img/icons8/icon-package-filled.png
 [icon-road-milestone-image]: ./docs/img/icons8/img-goal-filled-50.png
 [icon-share-stack-image]: ./docs/img/tech-stack/icon-swagger-50.png
 [icon-standardjs-image]: ./docs/img/tech-stack/icon-standardjs-50.png
@@ -730,10 +825,13 @@ Graphic art by [icons8][icons8-license-url].
 [license-url]: LICENSE
 [mda-book-url]: https://www.amazon.com/Enterprise-Patterns-MDA-Building-Archetype/dp/032111230X
 [npm-badge-image]: https://img.shields.io/npm/v/archetypes.svg?style=flat-square
+[npm-scripts-docs-url]: https://docs.npmjs.com/misc/scripts
 [npm-url]: https://npmjs.org/package/archetypes
 [nsp-badge-image]: https://nodesecurity.io/orgs/commonality/projects/3706b82c-bf9a-44f0-9d77-c489b6c11dff/badge?style=flat-square
 [nsp-sign-up-url]: https://nodesecurity.io/signup
 [nsp-url]: https://nodesecurity.io/orgs/commonality/projects/3706b82c-bf9a-44f0-9d77-c489b6c11dff
+[offsite-markdown-toc-url]: https://github.com/jonschlinkert/markdown-toc
+[offsite-nodejs-url]: https://nodejs.org/
 [offsite-snyk-vulnerabilities-url]: https://snyk.io/test/github/commonality/archetypes
 [offsite-standardjs-url]: https://standardjs.com/
 [party-swagger-json-url]: http://api.swindle.net/archetypes/v1/schemas/party/party.swagger.json
@@ -771,4 +869,3 @@ Graphic art by [icons8][icons8-license-url].
 [swagger-validity-url]: https://online.swagger.io/validator?url=http://api.swindle.net/archetypes/v1/schemas/party/party.swagger.json
 [travis-badge-image]: https://img.shields.io/travis/commonality/archetypes.svg?branch=master&style=flat-square
 [travis-url]: https://travis-ci.org/commonality/archetypes
-[coolor-palette-url]: https://coolors.co/cfdbd5-e8eddf-f5cb5c-242423-333533

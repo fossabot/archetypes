@@ -89,10 +89,13 @@
     "pretest": "npm run lint && npm run lint:swagger:all",
     "preversion": "npm run docs",
     "release": "standard-version",
-    "security": "npm run security:nsp:scan && npm run security:snyk:scan",
+    "security": "npm run security:nsp:scan && npm run security:snyk:auth && npm run security:snyk:all",
     "security:nsp": "nsp",
     "security:nsp:scan": "nsp check",
     "security:snyk": "snyk",
+    "security:snyk:all": "npm run security:snyk:auth && npm run security:snyk:monitor && npm run security:snyk:scan",
+    "security:snyk:auth": "snyk auth $SNYK_TOKEN",
+    "security:snyk:monitor": "snyk monitor --org=commonality",
     "security:snyk:scan": "snyk test",
     "test": "jest --config=jest.config.json"
   }

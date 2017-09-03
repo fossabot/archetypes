@@ -25,6 +25,9 @@
     ],
     "scope": "\\S+.*"
   },
+  "engines": {
+    "node": ">= 6.x"
+  },
   "dependencies": {
     "lodash": "^4.17.4",
     "standard-readme-spec": "1.1.3"

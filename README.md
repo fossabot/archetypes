@@ -559,6 +559,9 @@ The following CLI [`npm-scripts`][npm-scripts-docs-url] are available to you (as
 | `security:nsp` | `nsp` |
 | `security:nsp:scan` | `nsp check` |
 | `security:snyk` | `snyk` |
+| `security:snyk:all` | `npm run security:snyk:auth && npm run security:snyk:monitor && npm run security:snyk:scan` |
+| `security:snyk:auth` | `snyk auth $SNYK_TOKEN` |
+| `security:snyk:monitor` | `snyk monitor --org=commonality` |
 | `security:snyk:scan` | `snyk test` |
 | `pretest` | `npm run lint && npm run lint:swagger:all` |
 | `test` | `jest --config=jest.config.json` |
@@ -745,9 +748,9 @@ We'll take care of tagging your issue with the appropriated labels and answer wi
 Thanks goes to these wonderful people:
 
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (CONTRIBUTORS) -->
-| **Commits** | **Contributor** |
-| --- | --- |
-| 7 | [gregswindle](https://github.com/gregswindle) |
+| **Commits** | **Contributor** |  
+| --- | --- |  
+| 7 | [gregswindle](https://github.com/gregswindle) |  
 
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 

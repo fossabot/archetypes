@@ -77,7 +77,7 @@
   "license": "Apache-2.0",
   "repository": "commonality/archetypes",
   "scripts": {
-    "docs": "md-magic --path 'README.md' --ignore 'node_modules'",
+    "docs": "node generate-docs.js",
     "lint": "npm run lint:js",
     "lint:js": "eslint . --fix ",
     "lint:sonar": "node_modules/sonar-scanner/bin/sonar-scanner",
